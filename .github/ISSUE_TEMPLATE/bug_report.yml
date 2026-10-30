@@ -24,7 +24,7 @@ body:
     id: version
     attributes:
       label: Version
-      description: Output of `vem-project --version`
+      description: The script you ran, the commit or release of mito-seg, and your Fiji version (Help > About ImageJ)
     validations:
       required: true
   - type: input

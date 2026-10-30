@@ -8,16 +8,16 @@ build-backend = "hatchling.build"
 bypass-selection = true
 
 [project]
-name = "vem-project"
+name = "mito-seg"
 # The version changes only in a release commit; see CONTRIBUTING.md.
 # 0.0.0 means nothing has been released yet.
 version = "0.0.0"
-description = "One-line description of what this tool does for volume EM / CLEM data."
+description = "Fiji scripts for segmenting mitochondria in FIB-SEM volumes."
 readme = "README.md"
 license = "BSD-3-Clause"
 license-files = ["LICENSE"]
 requires-python = ">=3.11"
-authors = [{ name = "Your Name", email = "you@example.org" }]
+authors = [{ name = "Martin Jones", email = "martin.jones@crick.ac.uk" }]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Science/Research",
@@ -30,12 +30,12 @@ dependencies = []
 test = ["pytest", "pytest-cov", "numpy", "tifffile"]
 docs = ["mkdocs-material"]
 notebooks = ["jupyterlab", "matplotlib"]
-dev = ["vem-project[test,docs,notebooks]", "pre-commit", "ruff", "tox"]
+dev = ["mito-seg[test,docs,notebooks]", "pre-commit", "ruff", "tox"]
 
 [project.urls]
-Source = "https://github.com/ccp-volume-em/vem-project"
-Issues = "https://github.com/ccp-volume-em/vem-project/issues"
-Changelog = "https://github.com/ccp-volume-em/vem-project/blob/main/CHANGELOG.md"
+Source = "https://github.com/martlj/test-1"
+Issues = "https://github.com/martlj/test-1/issues"
+Changelog = "https://github.com/martlj/test-1/blob/main/CHANGELOG.md"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

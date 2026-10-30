@@ -1,11 +1,11 @@
 # Documentation site settings. Keep this file minimal: Material for MkDocs
 # reaches end of life in 2027, and its successor (Zensical) reads this file,
 # so the fewer custom settings, the easier the move.
-site_name: vem-project
-site_description: One-line description of what this tool does for volume EM / CLEM data.
-site_url: https://ccp-volume-em.github.io/vem-project/
-repo_url: https://github.com/ccp-volume-em/vem-project
-repo_name: vem-project
+site_name: mito-seg
+site_description: Fiji scripts for segmenting mitochondria in FIB-SEM volumes.
+site_url: https://martlj.github.io/test-1/
+repo_url: https://github.com/martlj/test-1
+repo_name: martlj/test-1
 
 nav:
   - Home: index.md

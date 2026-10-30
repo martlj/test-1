@@ -51,8 +51,8 @@ New to git? Try [Software Carpentry's git lesson](https://swcarpentry.github.io/
 ## One-time setup
 
 ```bash
-git clone https://github.com/ccp-volume-em/vem-project.git
-cd vem-project
+git clone https://github.com/martlj/test-1.git
+cd test-1
 python -m venv .venv
 source .venv/bin/activate              # Windows: .venv\Scripts\activate
 python -c "import sys; print(sys.prefix)"   # should end in .venv
