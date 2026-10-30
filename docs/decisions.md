@@ -24,17 +24,3 @@ an AI assistant can draft the entry but shouldn't invent the reasoning.
   re-running.
 - **Decided by:** who. **Links:** issue / pull request.
 -->
-
-## 2026-10-29: Report object volumes in physical units
-
-- **Decision:** `measure` reports each object's volume in cubic units of the
-  image's own voxel size (e.g. nm³), not as a voxel count.
-- **Why:** volume EM voxels are often anisotropic (e.g. 8 nm in-plane, 16 nm
-  between slices), so voxel counts can't be compared between datasets
-  acquired at different settings.
-- **Alternatives considered:** voxel counts (rejected: not comparable);
-  converting everything to µm³ (deferred: units are kept as acquired, to
-  avoid rounding very small objects).
-- **Effect on results:** none yet; this is the template's example.
-- **Decided by:** the template authors. *Replace this example entry with your
-  project's first decision.*
