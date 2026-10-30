@@ -134,20 +134,15 @@ with `python tools/check_template.py`.
 site (docs/getting-started.md), so it's written only once. Keep links out of
 it: they would break on the site. -->
 <!-- --8<-- [start:install] -->
-You need Python 3.11 or newer. Use a virtual environment, so this project's
-packages don't interfere with others:
+You need [Fiji](https://fiji.sc). The scripts are plain text files in the
+`fiji/` folder: download the repository (the green **Code** button on GitHub,
+then **Download ZIP**), or clone it with git:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-python -m pip install "vem-project @ git+https://github.com/ccp-volume-em/vem-project"
+git clone https://github.com/martlj/test-1.git
 ```
 
-Check it worked:
-
-```bash
-vem-project --version
-```
+There's nothing else to install to run the scripts.
 <!-- --8<-- [end:install] -->
 
 To work on the code itself, see [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -155,20 +150,22 @@ To work on the code itself, see [CONTRIBUTING.md](CONTRIBUTING.md).
 ## Quick start
 
 <!-- --8<-- [start:quickstart] -->
-From a copy of the repository, make a small synthetic label volume and measure
-the objects in it:
+Make a small synthetic label volume. This needs Python with `tifffile`
+(`python -m pip install tifffile`):
 
 ```bash
 python examples/make_example_data.py
-vem-project measure examples/params.yml
 ```
 
-The first command writes `data/example_labels.ome.zarr`: two box-shaped
-objects with 8 × 8 × 16 nm voxels. The second measures them and writes:
+It writes `data/example_labels.tif`: two box-shaped objects with
+8 × 8 × 16 nm voxels. Then, in Fiji, open
+`fiji/measure_object_volumes.groovy`, click **Run**, and choose
+`data/example_labels.tif` and an output folder, e.g. `results/example`. The
+script writes:
 
-- `results/example/object_volumes.csv`: the volume of each object in nm³;
-- `results/example/provenance.json`: the software version, parameters and
-  inputs that produced it.
+- `object_volumes.csv`: the volume of each object in nm³;
+- `provenance.json`: the parameters, input, ImageJ version and the script's
+  checksum.
 
 Object 1 is 8 × 20 × 20 voxels of 1,024 nm³ each, so its volume should be
 3,276,800 nm³.

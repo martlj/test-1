@@ -89,7 +89,7 @@ pytest                         # tests pass?
 ruff check . && ruff format .  # code tidy?
 git status                     # what changed?
 git diff                       # look at the changes
-git add src/vem_project/io.py tests/test_io_and_cli.py   # stage files by name
+git add fiji/measure_object_volumes.groovy tests/test_fiji_scripts.py   # stage files by name
 git commit
 ```
 

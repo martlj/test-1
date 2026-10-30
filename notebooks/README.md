@@ -1,12 +1,8 @@
 # Notebooks
 
 Jupyter notebooks for **this project's own analysis**: exploring your data,
-trying parameters, and making figures. They use the code in `src/`; they
-don't replace it.
-
-| Notebook | What it does |
-| --- | --- |
-| [`example_measure.ipynb`](example_measure.ipynb) | Measures the example volume and plots the object volumes |
+trying parameters, and making figures, e.g. from the tables the Fiji
+scripts write. There are none yet.
 
 ## Run them
 
@@ -27,9 +23,9 @@ jupyter lab
   and may show unpublished data, so a pre-commit hook (nbstripout) removes
   them when you commit, and a test checks none slip through. Save figures you
   want to keep to `results/`.
-- **Move reusable code into `src/`.** Once a function is used in more than one
-  notebook, or other people will run it, move it into the package with a
-  docstring and a test, and import it.
+- **Move reusable steps into a Fiji script.** Once a step is used in more
+  than one notebook, or other people will run it, make it a script in
+  `fiji/` with a test.
 - **Record decisions.** If a notebook leads you to choose a threshold or
   method, add it to [`docs/decisions.md`](../docs/decisions.md).
 - **No data in notebooks:** read it from `data/` or your institute's storage.

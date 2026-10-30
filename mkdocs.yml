@@ -11,7 +11,6 @@ nav:
   - Home: index.md
   - Getting started: getting-started.md
   - Usage: usage.md
-  - API reference: reference.md
   - Decisions: decisions.md
   - Development: development.md
 
@@ -33,13 +32,6 @@ theme:
 
 plugins:
   - search
-  - mkdocstrings:
-      handlers:
-        python:
-          paths: [src]
-          options:
-            docstring_style: numpy
-            show_source: false
 
 markdown_extensions:
   - admonition
