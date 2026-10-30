@@ -1,14 +1,7 @@
 # Start here
 
-> [!WARNING]
-> **This template is a work in progress and is being tested.** Things may
-> change, and some instructions may be wrong or missing. If something is
-> confusing or doesn't work, that's useful to know: please tell the
-> maintainers by opening an
-> [issue](https://github.com/ccp-volume-em/vem-project-template/issues).
-
 **For researchers who are new to coding or GitHub.** You don't need to know how
-to program to use this project. An AI assistant writes and runs the code. You
+to program to work on this project. An AI assistant writes and runs the code. You
 decide what it should do, check the results, and stay in charge of the science.
 
 This page covers everything you need to get going. Read it once, then keep it
@@ -18,8 +11,8 @@ open while you work.
 
 ## What is this?
 
-This is a ready-made starting point for writing analysis code for volume EM
-and CLEM data. Good habits are built in: your work is saved step by step,
+This is **mito-seg**: Fiji scripts for segmenting mitochondria in FIB-SEM
+volumes. Good habits are built in: your work is saved step by step,
 every change is checked by another person before it counts, and tests run
 automatically to catch mistakes.
 
@@ -28,20 +21,20 @@ much like a lab notebook that never loses a page.
 
 ## What you need
 
-- **A GitHub account.** Free at [github.com](https://github.com). Ask your group
-  leader or the project maintainer to add you to your organisation on GitHub.
+- **A GitHub account.** Free at [github.com](https://github.com). Ask the
+  project maintainer, Martin Jones, to give you access to the repository.
 - **An AI coding assistant** that can work with files, not just chat. Examples
   include Claude Code, GitHub Copilot, Cursor and Codex. Some run in your web
   browser and connect to GitHub directly, so there's nothing to install;
   others run on your own computer. Check which ones your institute approves.
 - **Ideally, someone to check your changes:** a colleague, supervisor or the
-  project maintainer. If you work alone, you'll check them yourself, using
+  project maintainer, Martin Jones. If you work alone, you'll check them yourself, using
   [*Before you merge*](#before-you-merge) below.
 
 ## What's in the project
 
-- **`src/`**: the Python code. **`fiji/`**: the Fiji scripts.
-- **`notebooks/`**: your own analysis and figures, using that code.
+- **`fiji/`**: the Fiji scripts. Python is only used for the tests.
+- **`notebooks/`**: your own analysis and figures, e.g. from the scripts' results.
 - **`examples/`**: how to try it, including a script that makes a small
   test volume.
 - **`tests/`**: automatic checks that the code gives the right answers.
@@ -89,24 +82,18 @@ you. The AI never merges its own work.
 
 ## Your first session
 
-1. **Make your own copy of this template.** On this project's GitHub page,
-   click the green **Use this template** button, then **Create a new
-   repository**. Give it a short name (e.g. `mito-volume-analysis`), choose
-   **Private**, and click **Create repository**. If you can't see the button,
-   ask the maintainer to give you access.
-2. **Open your new repository in your AI assistant.** How depends on the tool:
+1. **Get access.** Ask Martin Jones to add you to the repository
+   [martlj/test-1](https://github.com/martlj/test-1) on GitHub.
+2. **Open the repository in your AI assistant.** How depends on the tool:
    browser-based assistants let you pick the repository from a list; on your
-   own computer, ask the assistant to "download (clone) my repository
-   *name* from GitHub".
+   own computer, ask the assistant to "download (clone) the repository
+   martlj/test-1 from GitHub".
 3. **Say:**
-   > I'm new to coding and GitHub. Please read `AGENTS.md` and `START_HERE.md`,
-   > then run the start-project skill. Explain each step in plain language.
-4. **Answer its questions.** It asks what the project is for, who's involved
-   and a few choices. If you're unsure, say so and ask it to explain the
-   options.
-5. **It opens your first pull request.** Ask your reviewer to look at it, or
-   check it yourself (see *Before you merge*). Once it's merged, your project
-   is ready.
+   > I'm new to coding and GitHub. Please read `AGENTS.md` and
+   > `START_HERE.md`, then explain what this project does and how it's
+   > organised.
+4. **Try the example.** Ask: "Make the example data and show me how to run
+   the Fiji script on it. How can I check the result by hand?"
 
 ## Things you can say
 
