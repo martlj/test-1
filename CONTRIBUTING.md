@@ -51,8 +51,8 @@ New to git? Try [Software Carpentry's git lesson](https://swcarpentry.github.io/
 ## One-time setup
 
 ```bash
-git clone https://github.com/ccp-volume-em/vem-project.git
-cd vem-project
+git clone https://github.com/martlj/test-1.git
+cd test-1
 python -m venv .venv
 source .venv/bin/activate              # Windows: .venv\Scripts\activate
 python -c "import sys; print(sys.prefix)"   # should end in .venv
@@ -89,7 +89,7 @@ pytest                         # tests pass?
 ruff check . && ruff format .  # code tidy?
 git status                     # what changed?
 git diff                       # look at the changes
-git add src/vem_project/io.py tests/test_io_and_cli.py   # stage files by name
+git add fiji/measure_object_volumes.groovy tests/test_fiji_scripts.py   # stage files by name
 git commit
 ```
 

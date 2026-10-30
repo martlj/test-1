@@ -22,10 +22,3 @@ updates:
         patterns: ["*"]
     commit-message:
       prefix: build
-
-  - package-ecosystem: docker
-    directory: /
-    schedule:
-      interval: monthly
-    commit-message:
-      prefix: build

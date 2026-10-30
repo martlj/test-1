@@ -1,7 +1,7 @@
 # Development
 
 Contributions are welcome. The full guide is
-[CONTRIBUTING.md](https://github.com/ccp-volume-em/vem-project/blob/main/CONTRIBUTING.md)
+[CONTRIBUTING.md](https://github.com/martlj/test-1/blob/main/CONTRIBUTING.md)
 in the repository. In short:
 
 1. Work on a branch, never on `main`.
@@ -13,8 +13,8 @@ in the repository. In short:
 Set up a development environment:
 
 ```bash
-git clone https://github.com/ccp-volume-em/vem-project.git
-cd vem-project
+git clone https://github.com/martlj/test-1.git
+cd test-1
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 python -m pip install -e ".[dev]"

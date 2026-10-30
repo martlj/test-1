@@ -8,13 +8,14 @@ session. People are welcome to read it too: it's the short version of
 
 ## About this project
 
-<!-- Fill in during setup (the start-project skill does this). Keep it short. -->
-
-- **Purpose:** one or two sentences on what this software does, for which data.
-- **Users:** who runs it, and how (napari, command line, notebooks, HPC).
-- **Data:** typical inputs (e.g. FIB-SEM / SBF-SEM / array tomography volumes,
-  light microscopy for CLEM), sizes, and where they live. Never in this repo.
-- **Maintainers:** who reviews and merges pull requests.
+- **Purpose:** Fiji scripts for segmenting mitochondria in FIB-SEM volumes.
+- **Users:** Martin Jones, running the scripts in Fiji (with the dialog) or
+  headless. The project is Fiji scripts only: Python is used just for the
+  tests and repository tools.
+- **Data:** FIB-SEM volumes. Typical sizes and where they're stored are still
+  to be filled in. Never in this repo.
+- **Maintainers:** Martin Jones, the only developer for now, who reviews and
+  merges their own pull requests using the self-review checklist.
 
 ## Who you're working with
 

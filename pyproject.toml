@@ -2,56 +2,48 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+# No Python package: the project is Fiji scripts. Python is only used
+# for the tests and tools, so build an empty package pip can install.
+[tool.hatch.build.targets.wheel]
+bypass-selection = true
+
 [project]
-name = "vem-project"
+name = "mito-seg"
 # The version changes only in a release commit; see CONTRIBUTING.md.
 # 0.0.0 means nothing has been released yet.
 version = "0.0.0"
-description = "One-line description of what this tool does for volume EM / CLEM data."
+description = "Fiji scripts for segmenting mitochondria in FIB-SEM volumes."
 readme = "README.md"
 license = "BSD-3-Clause"
 license-files = ["LICENSE"]
 requires-python = ">=3.11"
-authors = [{ name = "Your Name", email = "you@example.org" }]
+authors = [{ name = "Martin Jones", email = "martin.jones@crick.ac.uk" }]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Science/Research",
     "Programming Language :: Python :: 3",
     "Topic :: Scientific/Engineering :: Image Processing",
 ]
-dependencies = [
-    "dask[array]",
-    "ngff-zarr",
-    "numpy",
-    "pyyaml",
-]
+dependencies = []
 
 [project.optional-dependencies]
-# nbclient, ipykernel and matplotlib run the example notebook in the tests.
-test = ["pytest", "pytest-cov", "tifffile", "nbclient", "ipykernel", "matplotlib"]
-docs = ["mkdocs-material", "mkdocstrings[python]"]
+test = ["pytest", "pytest-cov", "numpy", "tifffile"]
+docs = ["mkdocs-material"]
 notebooks = ["jupyterlab", "matplotlib"]
-dev = ["vem-project[test,docs,notebooks]", "pre-commit", "ruff", "tox"]
-
-[project.scripts]
-vem-project = "vem_project.cli:main"
+dev = ["mito-seg[test,docs,notebooks]", "pre-commit", "ruff", "tox"]
 
 [project.urls]
-Source = "https://github.com/ccp-volume-em/vem-project"
-Issues = "https://github.com/ccp-volume-em/vem-project/issues"
-Changelog = "https://github.com/ccp-volume-em/vem-project/blob/main/CHANGELOG.md"
+Source = "https://github.com/martlj/test-1"
+Issues = "https://github.com/martlj/test-1/issues"
+Changelog = "https://github.com/martlj/test-1/blob/main/CHANGELOG.md"
 
 [tool.pytest.ini_options]
-testpaths = ["tests", "src"]
-# importlib mode lets doctests in src/ run against an installed (non-editable) package
-addopts = ["--strict-markers", "--doctest-modules", "--import-mode=importlib"]
+testpaths = ["tests"]
+addopts = ["--strict-markers", "--import-mode=importlib"]
 markers = [
     "gpu: needs a CUDA-capable GPU; skipped automatically when none is available",
     "fiji: runs a Fiji script headless; skipped unless FIJI is set to the Fiji launcher",
 ]
-
-[tool.coverage.run]
-source = ["vem_project"]
 
 [tool.ruff]
 line-length = 100

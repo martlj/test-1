@@ -15,6 +15,9 @@ repos:
         args: [--maxkb=1000]
       - id: check-merge-conflict
       - id: check-yaml
+        # mkdocs.yml uses a !!python/name tag for mermaid diagrams; --unsafe
+        # still checks the syntax but doesn't try to load the tag.
+        args: [--unsafe]
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: no-commit-to-branch # main and master

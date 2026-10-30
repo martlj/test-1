@@ -5,32 +5,24 @@ What's left to do, most important first. Finished work moves to
 
 ## Next
 
-- [ ] Once the template is public, add the rule protecting `main`:
-      `gh api -X POST repos/ccp-volume-em/vem-project-template/rulesets --input .github/rulesets/main.json`
-      ([#19](https://github.com/ccp-volume-em/vem-project-template/pull/19)).
-- [ ] Once testing is finished, remove the work-in-progress notices from
-      `README.md`, `START_HERE.md` and `docs/index.md`, and the matching
-      step in the `start-project` skill
-      ([#18](https://github.com/ccp-volume-em/vem-project-template/pull/18)).
-- [ ] Replace the example measurement with the project's first real analysis.
-- [ ] Decide the supported interfaces (CLI, napari plugin, Fiji scripts,
-      notebooks).
+- [ ] Write the first mitochondria segmentation script in `fiji/`, with
+      tests on a small synthetic volume.
+- [ ] Record the typical size of the FIB-SEM volumes and where they're
+      stored, in `AGENTS.md` → *About this project*.
+- [ ] Add the rule protecting `main` (`.github/rulesets/main.json`), once
+      this setup is merged.
 
 ## Later
 
+- [ ] Publish the documentation site on GitHub Pages.
 - [ ] First release (`v0.1.0`) archived on Zenodo.
-- [ ] Publish the documentation site.
 - [ ] Run the Fiji script tests in CI (e.g. a job that downloads Fiji):
-      GitHub Actions skips them today, so they only run locally
-      ([#4](https://github.com/ccp-volume-em/vem-project-template/pull/4)).
-- [ ] Try the `update-from-template` skill on a real project made from the
-      template ([#11](https://github.com/ccp-volume-em/vem-project-template/pull/11)).
-- [ ] Check for template updates on a schedule, as for the guide. This needs
-      the template to be public (or a token), since a project's Actions can't
-      read a private template ([#11](https://github.com/ccp-volume-em/vem-project-template/pull/11)).
+      GitHub Actions skips them today, so they only run locally.
 - [ ] Review the docs tooling: Material for MkDocs reaches end of life in
       May 2027; its successor is [Zensical](https://zensical.org/).
 
 ## Open questions
 
-- Questions that need a decision, with who decides.
+- Which segmentation method to use (e.g. thresholding, a trained classifier
+  such as Labkit or Weka, or a deep-learning model). Decided by Martin Jones;
+  record the choice in [docs/decisions.md](docs/decisions.md).

@@ -2,57 +2,37 @@
 
 ```mermaid
 flowchart LR
-    params[/"params.yml"/] --> measure
-    labels[("labels<br>OME-Zarr")] -->|lazy read, with voxel size| measure["vem-project measure"]
+    labels[("labels<br>TIFF, with voxel size")] --> measure["measure_object_volumes.groovy<br>(Fiji)"]
     measure --> csv[/"object_volumes.csv<br>(physical units)"/]
     measure --> prov[/"provenance.json"/]
 ```
 
-## Command line
+The scripts are in the `fiji/` folder of the repository. Each one declares
+its inputs at the top, so Fiji shows a dialog for them when you run it.
 
-Write a parameter file. Paths are relative to the file:
+## In Fiji
 
-```yaml
-labels: ../data/my_labels.ome.zarr  # integer label image, OME-Zarr
-level: 0                            # pyramid level; 0 = full resolution
-output_dir: ../results/my_run
-```
+1. Drag the `.groovy` file onto the Fiji window, or use **File > Open**. It
+   opens in the script editor.
+2. Click **Run**. A dialog asks for the parameters.
+3. Results and a `provenance.json` record are written to the output folder
+   you chose. Messages appear in the Console window.
 
-Then run:
+To add a script to Fiji's menus, copy it into `Fiji.app/scripts/Plugins/` and
+restart Fiji.
 
-```bash
-vem-project measure params.yml
-```
+## Without the GUI (headless)
 
-Keeping the parameters in a file means a run can be repeated exactly, and
-works the same on a laptop and in an HPC batch job.
-
-## Python
-
-```python
-from vem_project.io import read_ome_zarr
-from vem_project.measure import object_volumes
-
-labels = read_ome_zarr("data/my_labels.ome.zarr")  # lazy: nothing loaded yet
-print(labels.voxel_size, labels.unit)
-volumes = object_volumes(labels)  # processed chunk by chunk
-```
-
-## Container
+The same script runs without a screen, e.g. as a batch job on an HPC cluster.
+Give every parameter on the command line, as `name="value"` pairs separated
+by commas:
 
 ```bash
-docker build -t vem-project .
-docker run --rm --user "$(id -u):$(id -g)" \
-    -v /path/to/project:/data \
-    vem-project measure /data/params.yml
+/path/to/Fiji.app/fiji --headless --run fiji/measure_object_volumes.groovy \
+    'labelFile="/data/labels.tif",outputDir="/data/results",requireCalibration=true'
 ```
 
-`-v` makes your project folder visible inside the container at `/data`;
-`--user` makes the output files belong to you.
-
-On an HPC cluster with Apptainer, once an image is published:
-
-```bash
-apptainer pull vem-project.sif docker://ghcr.io/ccp-volume-em/vem-project:v0.1.0
-apptainer run --bind /path/to/project:/data vem-project.sif measure /data/params.yml
-```
+Fiji exits normally even when a script fails, so check the output for
+`[ERROR]` lines and that the expected files were written. The `fiji/README.md`
+file in the repository covers older Fiji launchers and a workaround for
+`Macro or script not found` errors.

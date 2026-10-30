@@ -3,14 +3,14 @@
 # the version in pyproject.toml (a test checks this).
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "vem-project"
-abstract: "One-line description of what this tool does for volume EM / CLEM data."
+title: "mito-seg"
+abstract: "Fiji scripts for segmenting mitochondria in FIB-SEM volumes."
 type: software
 authors:
-  - family-names: "Surname"
-    given-names: "Given"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
-    affiliation: "Institute"
+  - family-names: "Jones"
+    given-names: "Martin"
+    email: "martin.jones@crick.ac.uk"
+    affiliation: "The Francis Crick Institute"
 version: "0.0.0"
 license: BSD-3-Clause
-repository-code: "https://github.com/ccp-volume-em/vem-project"
+repository-code: "https://github.com/martlj/test-1"
