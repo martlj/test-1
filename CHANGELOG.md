@@ -14,6 +14,7 @@ Development (tests, CI and developer docs).
 - Project set up from the CCP-volumeEM project template as mito-seg: Fiji
   scripts for segmenting mitochondria in FIB-SEM volumes. Starts with the
   template's example script, `fiji/measure_object_volumes.groovy`, which
-  measures the physical volume of each object in a label image.
+  measures the physical volume of each object in a label image
+  ([#1](https://github.com/martlj/test-1/pull/1)).
 
 [Unreleased]: https://github.com/martlj/test-1/commits/main
